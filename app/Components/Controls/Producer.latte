@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-header">Producer info</div>
+    <div class="card-body">
+        {if $producer && $producer->name}
+            <h3>{$producer->name}</h3>
+            <span>{$producer->webpage}</span>
+        {else}
+            <div class="badge badge-warning">Unknown producer</div>
+        {/if}
+    </div>
+</div>

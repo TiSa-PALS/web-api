@@ -1,0 +1,15 @@
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: TiSa\*Module\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+services:
+	router: App\RouterFactory::createRouter

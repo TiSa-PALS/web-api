@@ -1,0 +1,28 @@
+{block content}
+    <table class="table">
+        <tbody>
+        {foreach $dateMatrix as $defs}
+            <tr>
+                {for $i=0;$i<7;$i++}
+                    {if isset($defs[$i])}
+                        <td>
+                            <a href="#">
+                                <span class="index text-muted display-4 d-block">{$defs[$i]['index']}</span>
+                                <span class="shots-number">
+                                    {if $defs[$i]['shots']==0 }
+                                        <span class="badge badge-secondary">no shots</span>
+                                    {else}
+                                <span class="badge badge-success">{$defs[$i]['shots']} shots</span>
+                                    {/if}
+                                </span>
+                            </a>
+                        </td>
+                    {else}
+                        <td></td>
+                    {/if}
+                {/for}
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
+{/block}

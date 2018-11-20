@@ -1,0 +1,71 @@
+{block content}
+    <h1>{$item->identificator}</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card border-info">
+                <div class="card-header">Base info</div>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <span class="row">
+                            <strong class="col-5">Buy</strong>
+                            <span class="col-7">{$item->buy}</span>
+                        </span>
+                    </div>
+
+                    <div class="list-group-item">
+                        <span class="row">
+                            <strong class="col-5">Label</strong>
+                            <span class="col-7">{$item->label}</span>
+                        </span>
+                    </div>
+                    <div class="list-group-item">
+                        <span class="row">
+                            <strong class="col-5">Number</strong>
+                            <span class="col-7">{$item->inventar_number}</span>
+                        </span>
+                    </div>
+                    <div class="list-group-item">
+                        <span class="row">
+                            <strong class="col-5">Barcode</strong>
+                            <span class="col-7">{$item->barcode}</span>
+                        </span>
+                    </div>
+                    <div class="list-group-item">
+                        <span class="row">
+                            <strong class="col-5">Grant</strong>
+                            <span class="col-7">{$item->grant}</span>
+                        </span>
+                    </div>
+                    <div class="list-group-item">
+                        <span class="row">
+                            <strong class="col-5">Status</strong>
+                            <span class="col-7">
+                            {if !$item->state_id}
+                                <span class="badge badge-secondary">undefined</span>
+                            {elseif $item->state_id =1}
+                                <span class="badge badge-warning">used</span>
+                            {else}
+                                <span class="badge badge-danger">damaged</span>
+                            {/if}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    coating_id => 1
+    {*control coating $item->producer_id
+    <div class="col-lg-6">{control producer}</div>
+        <div class="col-lg-6">{control size}</div>*}
+    material_id => 1
+    {*control material $item->producer_id *}
+    surface_type_id => 1
+    {*control surface_type $item->producer_id *}
+    state => 1
+    {*control state $item->producer_id *}
+
+
+
+{/block}

@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">Size</div>
+
+    {if $size }
+        <div class="list-group">
+            {if $size->d}
+                <div class="list-group-item">
+                    <strong class="col">D</strong><span class="col">{$size->d} mm</span>
+                </div>
+            {/if}
+            {if $size->height}
+                <div class="list-group-item">
+                    <strong class="col">Height</strong><span class="col">{$size->height} mm</span>
+                </div>
+            {/if}
+            {if $size->width}
+                <div class="list-group-item">
+                    <strong class="col">Width</strong><span class="col">{$size->width} mm</span>
+                </div>
+            {/if}
+            {if $size->thickness}
+                <div class="list-group-item">
+                    <strong class="col">Thickness</strong><span class="col">{$size->thickness} mm</span>
+                </div>
+            {/if}
+        </div>
+
+    {else}
+        <div class="card-body">
+            <div class="badge badge-warning">Unknown size</div>
+        </div>
+    {/if}
+
+</div>

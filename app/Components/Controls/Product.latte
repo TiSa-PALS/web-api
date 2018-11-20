@@ -1,0 +1,186 @@
+<h2>Product info</h2>
+<div class="list-group">
+
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Producer</div>
+            <div class="col-6">{$item->producer->name}</div>
+        </div>
+    </div>
+
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Type</div>
+            <div class="col-6"><span
+                        class="{TiSa\ORM\Models\ModelType::getUIClassName($item->type)}">{$item->type->name}</span>
+            </div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Order number</div>
+            <div class="col-6">{$item->order_number}</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Spec</div>
+            <div class="col-6">{$item->spec}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Datasheet</div>
+            <div class="col-6">{$item->datasheet}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Size</div>
+            <div class="col-6">{$item->size}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Thickness</div>
+            <div class="col-6">{$item->thickness}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Coating</div>
+            <div class="col-6">{$item->coating}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Material</div>
+            <div class="col-6">{$item->material}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Surface type</div>
+            <div class="col-6">{$item->surface_type}</div>
+
+        </div>
+    </div>
+
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Wavelength from</div>
+            <div class="col-6">{$item->wavelength_from}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Wavelength to</div>
+            <div class="col-6">{$item->wavelength_to}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Wavelength note</div>
+            <div class="col-6">{$item->wavelength_note}</div>
+
+        </div>
+    </div>
+
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">incidence_angle</div>
+            <div class="col-6">{$item->incidence_angle}</div>
+
+        </div>
+    </div>
+
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">length_difference</div>
+            <div class="col-6">{$item->length_difference}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">transmission_wavelength</div>
+            <div class="col-6">{$item->transmission_wavelength}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">transmission</div>
+            <div class="col-6">{$item->transmission}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">optical_density</div>
+            <div class="col-6">{$item->optical_density}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Angle</div>
+            <div class="col-6">{$item->angle}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Angle tolerance</div>
+            <div class="col-6">{$item->angle_tolerance}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Reflectivity</div>
+            <div class="col-6">{$item->reflectivity}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Focus</div>
+            <div class="col-6">{if $item->focus}
+                {$item->focus} mm
+                {else}
+                    <span class="badge badge-danger">&#8734;</span>
+                {/if}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Polarization</div>
+            <div class="col-6">{$item->polarization}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Surface</div>
+            <div class="col-6">{$item->surface}</div>
+
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Note</div>
+            <div class="col-6">{$item->note}</div>
+
+        </div>
+    </div>
+</div>

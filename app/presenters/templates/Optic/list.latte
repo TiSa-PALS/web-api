@@ -1,0 +1,51 @@
+{layout '../@layout.b.latte'}
+{block content}
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>DB item_id</th>
+            <th>Inventar Id</th>
+            <th>type</th>
+            <th>state</th>
+            <th>Has box</th>
+            <th>exists</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $items as $item}
+            <tr>
+                <td>{$item->item_id}</td>
+                <td>{$item->type}{sprintf('%03d',$item->id)}</td>
+                <td>{$item->type}</td>
+                <td>
+                    {if $item->state=='new'}
+                        <span class="badge badge-success">New</span>
+                    {elseif $item->state=='used'}
+                        <span class="badge badge-warning">Used</span>
+                    {elseif $item->state=='pd'}
+                        <span class="badge badge-secondary">Partially destroyed</span>
+                    {elseif $item->state=='cd'}
+                        <span class="badge badge-dark">Completely destroyed</span>
+                    {/if}
+                </td>
+                <td>
+                    {if $item->has_box}
+                        <span class="badge badge-success">has</span>
+                    {else}
+                        <span class="badge badge-danger">not</span>
+                    {/if}
+                </td>
+                <td>
+                    {if $item->exist}
+                        <span class="badge badge-success">Y</span>
+                    {else}
+                        <span class="badge badge-danger">N</span>
+                    {/if}
+                </td>
+                <td><a class="btn btn-sm btn-primary" href="{link edit id => $item->item_id}">Edit</a></td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
+{/block}
