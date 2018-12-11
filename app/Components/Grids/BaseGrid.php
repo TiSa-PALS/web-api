@@ -8,6 +8,7 @@ class BaseGrid extends DataGrid {
     public function __construct() {
         parent::__construct();
         $this->setPagination(false);
+        $this->strict_session_filter_values = false;
         //   $this->configure();
     }
 

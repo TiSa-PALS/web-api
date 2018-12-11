@@ -1,0 +1,54 @@
+.badge-L {
+    color: white;
+    background-color: #ff7f0e;
+}
+
+.badge-M {
+    color: white;
+    background-color: #1f77b4;
+}
+
+.badge-S {
+    color: white;
+    background-color: #bcbd22;
+}
+
+.badge-W {
+    color: white;
+    background-color: #17becf;
+}
+
+.badge-E {
+    color: white;
+    background-color: #d62728;
+}
+
+.badge-XF, .badge-F {
+    color: white;
+    background-color: #7f7f7f;
+}
+
+.badge-P {
+    color: white;
+    background-color: #2ca02c;
+}
+
+.badge-WP {
+    color: white;
+    background-color: #9467bd;
+}
+
+.badge-O {
+    color: white;
+    background-color: #8c564b;
+}
+
+.badge-G, .badge-C {
+    color: white;
+    background-color: #e377c2;
+}
+
+.badge-U {
+    color: white;
+    background-color: black;
+}

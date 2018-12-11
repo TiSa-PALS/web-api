@@ -1,0 +1,1 @@
+../vendor/ublaboo/datagrid/assets/dist/datagrid-instant-url-refresh.js

@@ -28,8 +28,8 @@ class ProducerPresenter extends EntityPresenter {
         return \sprintf('List of producer.');
     }
 
-    protected function getEntity() {
-        return $this->database->table(\DBTable::TABLE_PRODUCER)->wherePrimary($this->id)->fetch();
+    protected function getTable() {
+        return $this->database->table(\DBTable::TABLE_PRODUCER);
     }
 
     /**
@@ -92,19 +92,6 @@ class ProducerPresenter extends EntityPresenter {
         $form = new Form();
         $form->addText('name', 'Name')->setRequired(true);
         return $form;
-    }
-
-    protected function handleEdit(Form $form) {
-        $this->database->table(\DBTable::TABLE_PRODUCER)->update($form->values);
-    }
-
-    /**
-     * @param Form $form
-     * @throws \Nette\Application\AbortException
-     */
-    protected function handleCreate(Form $form) {
-        $this->database->table(\DBTable::TABLE_PRODUCER)->insert($form->values);
-        $this->redirect('list');
     }
 
     public function createComponentDetail() {

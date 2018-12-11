@@ -15,28 +15,41 @@ CREATE TABLE IF NOT EXISTS `product` (
   `order_number`            VARCHAR(256)   NOT NULL,
   `spec`                    VARCHAR(256)   NULL     DEFAULT NULL,
   `datasheet`               VARCHAR(256)   NULL     DEFAULT NULL,
+  # sizes
   `size`                    VARCHAR(256)   NULL     DEFAULT NULL,
-  `thickness`               DECIMAL(12, 2) NULL     DEFAULT NULL,
+  `size_diameter`           DECIMAL(12, 2) NULL     DEFAULT NULL
+  COMMENT 'in mm',
+  #thickness
+  `thickness`               DECIMAL(12, 2) NULL     DEFAULT NULL
+  COMMENT 'in mm',
+  `filter_thickness`        DECIMAL(12, 2) NULL     DEFAULT NULL
+  COMMENT 'FOR XF in nm',
+  #material
   `coating`                 VARCHAR(256)   NULL     DEFAULT NULL,
   `material`                VARCHAR(256)   NULL     DEFAULT NULL,
-  `surface_type`            VARCHAR(256)   NULL     DEFAULT NULL,
-
+  #angle
+  `angle`                   VARCHAR(256)   NULL     DEFAULT NULL,
+  `angle_tolerance`         VARCHAR(256)   NULL     DEFAULT NULL,
+  #wavelength
   `wavelength_from`         INT(11)        NULL     DEFAULT NULL,
   `wavelength_to`           INT(11)        NULL     DEFAULT NULL,
   `wavelength_note`         VARCHAR(256)   NULL     DEFAULT NULL,
+  #surface
+  `surface_type`            VARCHAR(256)   NULL     DEFAULT NULL,
+  `surface`                 VARCHAR(256)   NULL     DEFAULT NULL,
+  `surface_scratch_dig`     VARCHAR(256)   NULL     DEFAULT NULL,
+  `surface_flatness`        VARCHAR(256)   NULL     DEFAULT NULL
+  COMMENT '@633',
+  #R/T
+  `reflectivity`            VARCHAR(256)   NULL     DEFAULT NULL,
+  `transmission`            DECIMAL(12, 2) NULL     DEFAULT NULL,
 
   `incidence_angle`         DECIMAL(12, 2) NULL     DEFAULT NULL,
-
   `length_difference`       VARCHAR(32)    NULL     DEFAULT NULL,
   `transmission_wavelength` VARCHAR(256)   NULL     DEFAULT NULL,
-  `transmission`            DECIMAL(12, 2) NULL     DEFAULT NULL,
   `optical_density`         DECIMAL(12, 2) NULL     DEFAULT NULL,
-  `angle`                   VARCHAR(256)   NULL     DEFAULT NULL,
-  `angle_tolerance`         VARCHAR(256)   NULL     DEFAULT NULL,
-  `reflectivity`            VARCHAR(256)   NULL     DEFAULT NULL,
   `focus`                   INTEGER(11)    NULL     DEFAULT NULL,
   `polarization`            VARCHAR(256)   NULL     DEFAULT NULL,
-  `surface`                 VARCHAR(256)   NULL     DEFAULT NULL,
   `note`                    TEXT           NULL     DEFAULT NULL,
 
   INDEX fk_item_type_idx (`type_id` ASC),
@@ -59,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `grant` (
 
 CREATE TABLE IF NOT EXISTS `item` (
   `item_id`    INT(11)     NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id`         INT(11)     NOT NULL,
+  `id_number`  INT(11)     NOT NULL,
   `EUIN`       VARCHAR(64) NULL     DEFAULT NULL,
   `product_id` INT(11)     NOT NULL,
   `has_box`    TINYINT(1)  NULL     DEFAULT NULL,

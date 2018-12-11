@@ -20,6 +20,9 @@ class ModelItem {
             default:
                 return 'badge badge-danger';
         }
+    }
 
+    public static function createId(ActiveRow $row) {
+        return \sprintf('%s%03d', $row->product->type->label, $row->id_number);
     }
 }

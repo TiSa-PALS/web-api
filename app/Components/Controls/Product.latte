@@ -1,10 +1,11 @@
-<h2>Product info</h2>
 <div class="list-group">
 
     <div class="list-group-item">
         <div class="row">
             <div class="col-6">Producer</div>
-            <div class="col-6">{$item->producer->name}</div>
+            <div class="col-6">{$item->producer->name}
+                <a href="{plink Producer:detail, id=>$item->producer_id}" class="ml-3 btn btn-info btn-sm">Info</a>
+            </div>
         </div>
     </div>
 
@@ -40,14 +41,27 @@
         <div class="row">
             <div class="col-6">Size</div>
             <div class="col-6">{$item->size}</div>
-
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-6">Size D</div>
+            <div class="col-6">
+                {if $item->size_diameter}
+                    {$item->size_diameter} mm
+                {else}
+                    <span class="badge badge-warning">Not set</span>
+                {/if}
+            </div>
         </div>
     </div>
     <div class="list-group-item">
         <div class="row">
             <div class="col-6">Thickness</div>
-            <div class="col-6">{$item->thickness}</div>
 
+            <div class="col-6">
+                {$item->thickness} mm
+            </div>
         </div>
     </div>
     <div class="list-group-item">
@@ -154,11 +168,13 @@
     <div class="list-group-item">
         <div class="row">
             <div class="col-6">Focus</div>
-            <div class="col-6">{if $item->focus}
-                {$item->focus} mm
+            <div class="col-6">
+                {if $item->focus}
+                    {$item->focus} mm
                 {else}
                     <span class="badge badge-danger">&#8734;</span>
-                {/if}</div>
+                {/if}
+            </div>
 
         </div>
     </div>

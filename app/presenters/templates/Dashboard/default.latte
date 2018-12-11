@@ -1,7 +1,17 @@
 {layout '../@layout.b.latte'}
 {block content}
+    <h2>Inventory</h2>
     <ul>
         <li><a href="{link :Optic:list}">List of optic</a></li>
+        <li><a href="{link :Inventory:Item:list}">List of items</a></li>
+        <li><a href="{link :Inventory:Item:insert}">Insert new item</a></li>
+        <li><a href="{link :Inventory:Item:create}">Create new item</a></li>
+
+        <li><a href="{link :Inventory:Product:list}">List of products</a></li>
+        <li><a href="{link :Inventory:Product:create}">Insert new product</a></li>
+        <li><a href="{link :Inventory:Producer:list}">List of producers</a></li>
+        <li><a href="{link :Inventory:Producer:create}">Insert new producer</a></li>
     </ul>
+
 
 {/block}

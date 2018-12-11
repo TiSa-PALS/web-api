@@ -1,8 +1,8 @@
 <?php
 
+namespace TiSa;
 
-namespace App\Presenters;
-
+use App\Presenters\BasePresenter;
 
 class DashboardPresenter extends BasePresenter {
     public function getTitle() {
